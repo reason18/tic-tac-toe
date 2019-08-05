@@ -1,0 +1,148 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(42, 85, 177);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.app-wrapper {
+  margin: auto;
+  padding: 20px;
+  background: rgb(49, 97, 199);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+}
+
+.game > div {
+  min-width: 150px;
+  text-align: center;
+  color: white;
+}
+
+.tic-tac-toe {
+  text-align: center;
+}
+
+.tic-tac-toe button {
+  display: inline-block;
+  margin: 15px 0;
+  width: 100%;
+  height: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  font-family: cursive;
+  cursor: pointer;
+  color: rgb(49, 97, 199);
+  max-width: 250px;
+}
+
+.tic-tac-toe button:hover {
+  transform: scale(1.04);
+  transition: transform 0.1s ease-out;
+}
+
+#grid {
+  margin: 0 auto;
+  display: grid;
+  background: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  height: 250px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+}
+#grid > div {
+  font-size: 20px;
+  text-align: center;
+}
+
+#grid > div label {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: rgb(49, 97, 199);
+}
+
+#grid > div label input {
+  display: none;
+}
+
+#grid > div label span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  vertical-align: middle;
+  font-family: cursive;
+}
+
+#grid > div label input:checked + span::after {
+  content: attr(data-key);
+  font-size: 46px;
+  position: absolute;
+  vertical-align: middle;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#grid > div label input:checked + span[data-key="X"] {
+  color: rgb(97, 255, 249);
+}
+
+#grid > div label input:checked + span[data-key="O"] {
+  color: rgb(243, 97, 97);
+}
+
+.game-settings input {
+  display: none;
+}
+
+.game-settings label {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 15px;
+}
+
+.game-settings label span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-family: cursive;
+  font-size: 18px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.game-settings label.cross span {
+  color: rgb(97, 255, 249);
+}
+
+.game-settings label.toe span {
+  color: rgb(243, 97, 97);
+}
+
+.game-settings label input:checked + span {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
