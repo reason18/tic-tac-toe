@@ -5,7 +5,6 @@ export const GameSettings = props => {
   const onChange = e => {
     if (e.target.checked) {
       let startPlayer = e.target.dataset.player;
-      console.log("e", startPlayer);
       props.onChange({ startPlayer });
     }
   };
