@@ -3,10 +3,6 @@ import { GameStages, processUserAction } from "./helpers";
 import { GameBoard, GameSettings, GameStatus } from "./components";
 
 const defaultState = {
-  players: {
-    X: "000000000",
-    O: "000000000"
-  },
   cells: [...Array(9)],
   currentTurn: "X",
   currentStatus: GameStages.NOT_STARTED,
